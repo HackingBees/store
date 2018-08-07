@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Promo Form</title>
+    </head>
+    <body>
+        <form action="/promo" method="post">
+            <div>
+                <label for="message">Promo Message</label>
+                <input type="text" name="message" id="message">
+            </div>
+            <div>
+                <label for="product">Promo Product</label>
+                <select name="product[id]" id="product[id]">
+                    <% for (var i=0; i<list.length;i++) { %>
+                        <option value="<%=list[i].id%>"><%=list[i].name%></option>
+                    <%}%>
+                </select>
+            </div>
+            <button type="submit" value="Create Promo">Create Promo</button>
+        </form>
+    </body>
+</html>

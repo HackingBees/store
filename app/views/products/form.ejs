@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Storefront</title>
+	</head>
+	<body>
+		<div class="errors">
+			<%if (validationErrors) {%>
+				<ul>
+					<%for (i=0;i<validationErrors.length;i++) {%>
+						<li><%=validationErrors[i].param%>: <%=validationErrors[i].msg%></li>
+					<%}%>
+				</ul>
+
+			<%}%>
+		</div>
+		<form action="/products" method="post">
+			<div>
+				<label for="productName">Product Name</label>
+				<input type="text" name="productName" id="productName" value="<%=product.productName%>" placeholder="Product Name goes here...">
+			</div>
+			<div>
+				<label for="productDescription">Description</label>
+				<textarea cols="80" rows="10" name="productDescription" id="productDescription" placeholder="Describe the product here..."><%=product.productDescription%></textarea>
+			</div>
+			<div>
+				<label for="productPrice">Suggested Price</label>
+				<input type="text" name="productPrice" id="productPrice" value="<%=product.productPrice%>" placeholder="Product Suggested Price here...">
+			</div>
+			<button type="submit" value="save">Save</button>
+		</form>
+	</body>
+</html>
